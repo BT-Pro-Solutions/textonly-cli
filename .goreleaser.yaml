@@ -29,7 +29,7 @@ sboms:
     formats: [spdx-json]
 release:
   github:
-    owner: textonlyio
+    owner: BT-Pro-Solutions
     name: textonly-cli
   draft: false
   prerelease: auto

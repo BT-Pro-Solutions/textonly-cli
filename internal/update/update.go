@@ -7,7 +7,7 @@ import (
 	selfupdate "github.com/rhysd/go-github-selfupdate/selfupdate"
 )
 
-const repo = "textonlyio/textonly-cli"
+const repo = "BT-Pro-Solutions/textonly-cli"
 
 func CheckAndApply(checkOnly bool, currentVersion string) (string, bool, error) {
 	rel, found, err := selfupdate.DetectLatest(repo)
