@@ -1,0 +1,52 @@
+# OS
+.DS_Store
+
+# Editors/IDE
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+
+# Go build artifacts
+dist/
+bin/
+build/
+releases/
+tmp/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+*.log
+
+# Coverage/profiles
+coverage.out
+coverage.*
+profile.out
+
+# Caches
+.cache/
+*.tmp
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Go modules vendor (uncomment if you never commit vendor/)
+# vendor/
+
+# GoReleaser aux
+.goreleaser.yaml.dist
+.goreleaser.yml.dist
+
+dist/
+.DS_Store
+**/*.sig
+**/*.sbom
+**/*.spdx
+.idea/
+.vscode/

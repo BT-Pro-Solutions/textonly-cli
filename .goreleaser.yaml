@@ -1,0 +1,35 @@
+project_name: textonly-cli
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - id: to
+    main: ./cmd/to
+    binary: to
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w -X main.version={{.Version}} -X main.commit={{.ShortCommit}} -X main.date={{.Date}}
+    goos: [linux, darwin]
+    goarch: [amd64, arm64]
+archives:
+  - id: tarball
+    format: tar.gz
+    name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - LICENSE
+      - README.md
+checksum:
+  name_template: checksums.txt
+sboms:
+  - artifacts: [archive]
+    id: sbom
+    formats: [spdx-json]
+release:
+  github:
+    owner: textonlyio
+    name: textonly-cli
+  draft: false
+  prerelease: auto
